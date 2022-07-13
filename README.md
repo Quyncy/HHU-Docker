@@ -1,2 +1,2 @@
-# HHU-Docker
-HHU API Project
+# recipe-app-api
+Rezept API Projekt.
