@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(2u11phqn))f20#@ew79u9n!!iyw$mg6mq5r!!a6)2x8*p14bf'
+SECRET_KEY = 'django-insecure-i1xb0__6y+v0%aznf#(=7)2ls@mbig%%frau3foeu_i=it*lr$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -75,8 +75,11 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': os.environ.get('DB_HOST'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASS'),
     }
 }
 
